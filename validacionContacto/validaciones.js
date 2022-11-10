@@ -49,7 +49,7 @@ async function deshabilitar(){
 	if(validar() == true){
 		var btn = document.getElementById('btn');
 		btn.disabled = true;
-		btn.value = 'Enviando datos';
+		btn.value = 'Enviando datos ..........';
 		await delay(2);
 		btn.form.submit();
 	}
