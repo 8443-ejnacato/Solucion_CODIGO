@@ -43,6 +43,15 @@ input[type=submit]{
   border-radius: 20px;
   margin-bottom: 0;
 }
+.submit{
+  background: linear-gradient(#FFDA63, #FFB940);
+  border:0;
+  color: brown;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
 
 input[type=submit]:active{
   transform: scale(0.95);

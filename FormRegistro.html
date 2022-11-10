@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,50 +14,76 @@
          Transversal<br>
          <input type="text" name="txtTransversal" value="">
         
-		<br><br>
-		<!--<input type="checkbox" name="chbEntrega1" value="PROPIETARIO"checked> Entrega al propietario.<br>
-        <input type="checkbox" name="chbEntrega2" value="TERCERO"> Entrega a un tercero.-->
-        <input type="radio" id="entrega" name="rbEntrega2" value="PROPIETARIO" checked>Propietario<br>
-        <input type="radio" id="entrega" name="rbEntrega2" value="TERCERO">Tercero
+    <br><br>
+        <input type="checkbox" name="chbEntrega1" id="Entrega1" value="PROPIETARIO" onclick="ActivarB()"> Entrega al propietario.<br>
+        <input type="checkbox" name="chbEntrega2" id="Entrega2" value="TERCERO" onclick="ActivarF()"> Entrega a un tercero.
+        <!--<input type="radio" id="entrega" name="rbEntrega2" value="PROPIETARIO" checked>Propietario<br>
+        <input type="radio" id="entrega" name="rbEntrega2" value="TERCERO">Tercero-->
 
          <br><br>
          Cantones: <select  name="cmbCantones">
-		      <optgroup label="PICHINCHA">
-					<option value="Q">Quito</option>
-					<option value="R">Rumiñahui</option>
-					<option value="M">Mejia</option>
+          <optgroup label="PICHINCHA">
+          <option value="Q">Quito</option>
+          <option value="R">Rumiñahui</option>
+          <option value="M">Mejia</option>
              </optgroup>
-			 
-			 <optgroup label="GUAYAS">
-					<option value="G">Guayaquil</option>
-					<option value="S">Santa Elena</option>
-					<option value="SL">Salinas</option>
+       
+       <optgroup label="GUAYAS">
+          <option value="G">Guayaquil</option>
+          <option value="S">Santa Elena</option>
+          <option value="SL">Salinas</option>
              </optgroup>
-			 
+       
          </select>
-		 
+     
          <br><br>
-           <input type="submit" name="SubmitDireccion" value="REGISTRAR">
+           <input type="submit" name="SubmitDireccion" id="Submitb" value="ENVIAR DATOS" disabled>
        </fieldset>
     </form>
-	
-	<br>
-    <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial" target="_blank">
+  
+  <br>
+    <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial" id="form1" target="_blank" style="display: none;">
       <br>  
        <fieldset>
          <legend>INFORMACIÓN CONFIDENCIAL</legend>
          Código Postal: 
          <input type="password" name="pswCodigoPostal" value="">
          
-		 <br><br>
+     <br><br>
          Referencia de la Dirección:<br>
          <textarea name="Mensaje" rows="3" cols="30" id="Mensaje"></textarea><br>
          <br>
-           <input type="submit" name="SubmitConfidencial" value="PROCESAR">
+           <input type="submit" name="SubmitConfidencial"  value="GUARDAR">
        </fieldset>
     </form>
     <br><br>
     <a href="index.html">Regresar</a>
     
+    <!-- Modificación PARTE 1-->
+     <script>
+            var objeto;
+            var check;
+            function ActivarB() { 
+                objeto = document.getElementById("Submitb");
+                check = document.getElementById("Entrega1");
+                if(check.checked == true){
+                  objeto.disabled = false; 
+                }
+                else{
+                  objeto.disabled = true;
+                }
+            } 
+            function ActivarF() { 
+                objeto = document.getElementById("form1");
+                check = document.getElementById("Entrega2");
+                if(check.checked == true){
+                  objeto.style.display = "block"; 
+                }
+                else{
+                  objeto.style.display = "none";
+                }
+            } 
+       </script>
+
   </body>
 </html>
